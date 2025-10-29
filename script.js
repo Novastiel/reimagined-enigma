@@ -8,3 +8,4 @@ document.addEventListener('DOMContentLoaded', function() {
 >>>>>>> Stashed changes
   console.log(message)
 })
+
