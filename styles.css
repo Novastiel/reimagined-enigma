@@ -1,0 +1,73 @@
+/* Intentionally garish styles for the "ugly" UI */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+:root{
+  --bg: #ff00ff;
+  --accent: #00ff00;
+  --accent2: #ffff00;
+  --text: #000080;
+}
+
+* { box-sizing: border-box; }
+
+body{
+  background: repeating-linear-gradient(45deg, var(--bg) 0 10px, #ffffff 10px 20px);
+  font-family: 'Comic Neue', cursive;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  background: linear-gradient(90deg, #ff6600, #0066ff);
+  padding: 40px;
+  text-align: center;
+  border-bottom: 6px dashed var(--accent2);
+  transform: skewY(-4deg);
+}
+
+.header h1{
+  font-size: 48px;
+  margin: 0;
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 6px;
+}
+
+.subtitle{
+  margin-top: 10px;
+  font-size: 14px;
+  transform: rotate(-2deg);
+  background: var(--accent);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px 0 20px 0;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 24px;
+}
+
+.screenshot img{
+  width: 100%;
+  border: 12px groove #ff0000;
+  box-shadow: 0 0 0 8px #00ff00 inset;
+}
+
+.analysis{
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.6) 0 8px, rgba(0,0,0,0.05) 8px 16px);
+  padding: 16px;
+  border-radius: 18px;
+  border: 4px double #000;
+  transform: rotate(1deg);
+  margin-top: 40px;
+}
+
+.footer{
+  padding: 20px;
+  text-align: center;
+  background: radial-gradient(circle at 20% 20%, #fff 0, transparent 30%), linear-gradient(90deg,#ffe600,#00e5ff);
+  margin-top: 20px;
+}

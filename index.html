@@ -1,14 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Static Site</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ugly UI — Example Static Site</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Hello GitHub Pages!</h1>
-  <p>This site is deployed automatically using GitHub Actions.</p>
+  <header class="header">
+    <h1>Behold: The Ugliest UI</h1>
+    <p class="subtitle">A static site demonstrating an intentionally awful UI and how to improve it.</p>
+  </header>
+
+  <main class="content">
+    <section class="screenshot">
+      <h2>Screenshot of an ugly UI</h2>
+      <img src="ugly_screenshot.png" alt="Ugly UI screenshot" />
+    </section>
+
+    <section class="analysis">
+      <h2>Why this UI is bad</h2>
+      <ul>
+        <li>Horrible color clashes and unreadable text.</li>
+        <li>Inconsistent spacing and alignment.</li>
+        <li>Overuse of different font sizes and decorations.</li>
+        <li>No clear visual hierarchy or affordances.</li>
+        <li>Poor accessibility (contrast, no alt text for content, tiny clickable targets).</li>
+      </ul>
+
+      <h2>How I would improve it</h2>
+      <ol>
+        <li>Choose a limited, harmonious color palette (2–3 colors plus neutrals) and ensure accessible contrast ratios.</li>
+        <li>Establish a consistent typographic scale (font sizes, line-height) and stick to 1–2 web-safe fonts or variable fonts.</li>
+        <li>Create a clear layout grid for alignment and spacing; use consistent padding/margins and group related items.</li>
+        <li>Improve affordances: use clear buttons, consistent primary/secondary actions, and visible focus states for keyboard users.</li>
+        <li>Run accessibility checks (WCAG) and automated linters, and test with keyboard and screen readers.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Repository includes a GitHub Actions workflow that lints JS and deploys to GitHub Pages on push.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

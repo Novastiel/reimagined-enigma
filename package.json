@@ -1,0 +1,12 @@
+{
+  "name": "ugly-ui-static-site",
+  "version": "1.0.0",
+  "description": "Static site demonstrating an ugly UI; includes ESLint and GitHub Actions workflow for CI/CD.",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.49.0"
+  },
+  "scripts": {
+    "lint": "eslint script.js"
+  }
+}
