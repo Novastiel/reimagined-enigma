@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Lint, Build, and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Runs whenever you push to 'main'
+    branches: [ main ]  # Runs whenever you push to the main branch
 
 permissions:
   contents: read
@@ -10,34 +10,46 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  lint-build-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Optional: if you have Node.js build steps (for example with Vite or React)
+      # Step 2: Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      # Optional build step — skip or replace with your own build commands
+      # Step 3: Install ESLint and dependencies
+      - name: Install ESLint
+        run: |
+          npm init -y
+          npm install eslint --save-dev
+
+      # Step 4: Run ESLint quality check
+      - name: Run ESLint
+        run: npx eslint . --ext .js
+        continue-on-error: false  # Stop if lint errors are found
+
+      # Step 5: (Optional) Build step — add your own commands here
       - name: Build site
         run: |
-          echo "No build step defined. Add commands here if needed."
+          echo "No build step defined. Add commands here if using a bundler or static site generator."
 
-      # Configure GitHub Pages
+      # Step 6: Configure GitHub Pages
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
 
-      # Upload site files as an artifact
+      # Step 7: Upload site files to artifact
       - name: Upload site files
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./
 
-      # Deploy to GitHub Pages
+      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
