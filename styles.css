@@ -51,6 +51,7 @@ body{
 }
 
 .screenshot img{
+  text-align: center;
   width: 100%;
   border: 12px groove #ff0000;
   box-shadow: 0 0 0 8px #00ff00 inset;
