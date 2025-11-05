@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
   // Target element to display the message
-  const output = document.createElement('h2');
+  const output = document.createElement("h2");
   output.id = "welcome-message";
   output.style.textAlign = "center";
   output.style.marginTop = "3rem";
